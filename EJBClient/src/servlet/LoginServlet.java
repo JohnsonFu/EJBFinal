@@ -58,7 +58,7 @@ private static StudentService studentService= EJBFactory.getStudentServiceEJB();
         String password=request.getParameter("password");
         ServletContext context = getServletContext();
       //  StudentService studentService =  EJBFactory.getStudentServiceEJB();
-        Student student= studentService.Login(141250000,"mangguo");
+        Student student= studentService.Login(id,password);
         if(student==null){//登录失败，调到错误页面
             try {
                 Student tmp=new Student();
