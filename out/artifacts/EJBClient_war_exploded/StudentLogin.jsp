@@ -18,7 +18,7 @@
 <body>
 <div  class="container" align="center">
     <br>
-    <a href="/monitor">在线用户监控</a>&nbsp;&nbsp;&nbsp;<a href="/tourist">游客通道</a><br>
+    <a href="/EJBClient_war_exploded/monitor">在线用户监控</a>&nbsp;&nbsp;&nbsp;<a href="/EJBClient_war_exploded/tourist">游客通道</a><br>
 <h1>学生登录</h1>
 <form action="/EJBClient_war_exploded/login.student" method="post" onsubmit="return check()">
    学号<input type="text" name="id" /><br>

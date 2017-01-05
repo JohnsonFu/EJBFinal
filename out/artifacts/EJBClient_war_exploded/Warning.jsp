@@ -22,7 +22,7 @@
  <jsp:useBean id="item" class="com.fulinhua.bean.StudentCourse" scope="page"></jsp:useBean>
  <div  style="width:50%;margin-left:25%;">
     <h2>警示页面</h2>
-   <a href="/ServletHomework/logout.student">退出登录</a><br>
+   <a href="/EJBClient_war_exploded/logout.student">退出登录</a><br>
      学生ID:<jsp:getProperty name="student" property="id"></jsp:getProperty>
      学生姓名:<jsp:getProperty name="student" property="name"></jsp:getProperty><br>
      <table width="50%"  class="table table-bordered">
@@ -46,7 +46,7 @@ for (int i = 0; i < courseList.getStudentCourseList().size(); i++) {
             <% }else{%>
             <th style="color:red">未测验</th>
             <% } %>
-            <form action="/ServletHomework/quitcourse" method="post">
+            <form action="/EJBClient_war_exploded/quitcourse" method="post">
             <th><input type="hidden" name="cid" value=<%=String.valueOf(item.getId())%>><input type="submit" value="退课"></th>
                 </form>
         </tr>
