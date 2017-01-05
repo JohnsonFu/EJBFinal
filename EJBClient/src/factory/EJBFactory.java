@@ -1,5 +1,6 @@
 package factory;
 
+import com.fulinhua.service.CourseService;
 import com.fulinhua.service.StudentService;
 
 import javax.naming.Context;
@@ -52,6 +53,21 @@ final Context context = new InitialContext(jndiProps);
 
       //  System.out.println(namespace);
         StudentService studentService = (StudentService) getEjb(namespace);
+        //
+        return studentService;
+    }
+    public static CourseService getCourseServiceEJB(){
+
+        final String appName = "";
+        final String moduleName = "EJBServer_war_exploded";
+        final String distinctName = "";
+        final String beanName = "CourseServiceImpl";
+        final String viewClassName = CourseService.class.getName();
+        final String namespace = "ejb:" + appName + "/" + moduleName
+                + "/" + distinctName +  beanName + "!" + viewClassName;
+
+        //  System.out.println(namespace);
+        CourseService studentService = (CourseService) getEjb(namespace);
         //
         return studentService;
     }

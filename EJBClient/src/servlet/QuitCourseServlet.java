@@ -3,10 +3,9 @@ package servlet;
 import com.fulinhua.bean.Student;
 import com.fulinhua.bean.StudentCourse;
 import com.fulinhua.bean.StudentCourseList;
-import com.fulinhua.factory.ServiceFactory;
 import com.fulinhua.service.StudentService;
+import factory.EJBFactory;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +19,8 @@ import java.util.List;
  * Created by fulinhua on 2016/12/28.
  */
 public class QuitCourseServlet extends HttpServlet {
-    @EJB
-    private StudentService studentService;
+
+    private StudentService studentService= EJBFactory.getStudentServiceEJB();
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
             this.execute(request,response);
@@ -39,7 +38,7 @@ public class QuitCourseServlet extends HttpServlet {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
         String courseid=request.getParameter("cid");
         System.out.println(courseid);
-        ServiceFactory.getStudentService().QuitClass(Integer.parseInt(courseid));
+        studentService.QuitClass(Integer.parseInt(courseid));
         StringBuffer location=request.getRequestURL();
 
         HttpSession session=request.getSession();

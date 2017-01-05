@@ -3,8 +3,8 @@ package servlet;
 import com.fulinhua.bean.Course;
 import com.fulinhua.bean.CourseList;
 import com.fulinhua.service.CourseService;
+import factory.EJBFactory;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
  * Created by fulinhua on 2016/12/28.
  */
 public class TouristServlet extends HttpServlet {
-@EJB
-private CourseService courseService;
+
+private CourseService courseService= EJBFactory.getCourseServiceEJB();
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             this.execute(request,response);

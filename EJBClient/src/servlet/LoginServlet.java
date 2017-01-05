@@ -64,7 +64,7 @@ private static StudentService studentService= EJBFactory.getStudentServiceEJB();
                 Student tmp=new Student();
                 tmp.setId(id);
                 request.getSession().setAttribute("tmp",tmp);
-                response.sendRedirect("/loginError.jsp");
+                response.sendRedirect("/EJBClient_war_exploded/loginError.jsp");
             } catch (IOException e) {
                 e.printStackTrace();
             }
